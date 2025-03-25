@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
-import { Helmet } from "react-helmet-async";
+import { Typography } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
+
 const About = () => {
   return (
     <>

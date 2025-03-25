@@ -8,8 +8,8 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node ./server.js",
-    "build:preview": "npm run build && npm run preview"
+    "preview": "npm run build && cross-env NODE_ENV=production node ./server.js",
+    "prettier:fix": "prettier --config .prettierrc 'src/**/*.+(ts|tsx)' --write"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -32,6 +32,7 @@
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "cross-env": "^7.0.3",
+    "prettier": "^3.5.3",
     "typescript": "~5.7.3",
     "vite": "^6.1.1"
   }

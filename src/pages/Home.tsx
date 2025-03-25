@@ -1,6 +1,7 @@
-import { Link, Stack, Typography } from "@mui/material";
-import { Helmet } from "react-helmet-async";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Stack, Typography } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
+import { Link as RouterLink } from 'react-router-dom';
+
 const Home = () => {
   return (
     <>
@@ -9,10 +10,10 @@ const Home = () => {
       </Helmet>
       <Typography variant="h1">This is the Home Page</Typography>
       <Stack>
-        <Link component={RouterLink} to={"/about"}>
+        <Link component={RouterLink} to={'/about'}>
           ABOUT
         </Link>
-        <Link component={RouterLink} to={"/todos"}>
+        <Link component={RouterLink} to={'/todos'}>
           TODOS
         </Link>
       </Stack>

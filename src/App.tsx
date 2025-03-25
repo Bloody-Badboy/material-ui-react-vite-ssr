@@ -1,13 +1,13 @@
-import { CacheProvider } from "@emotion/react";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import React, { FC, PropsWithChildren } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import theme from "./theme";
+import { CacheProvider } from '@emotion/react';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import React, { FC, PropsWithChildren } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import theme from './theme';
 
 // Works also with SSR as expected
 
 const App: FC<PropsWithChildren<{ emotionCache: any; helmetContext?: any }>> = (
-  props
+  props,
 ) => {
   const { emotionCache, helmetContext } = props;
   return (

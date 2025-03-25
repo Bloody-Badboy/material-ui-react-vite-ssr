@@ -1,25 +1,21 @@
-import createEmotionServer from "@emotion/server/create-instance";
-import type * as express from "express";
-import { renderToString } from "react-dom/server";
-import {
-  createStaticHandler,
-  createStaticRouter,
-  StaticRouterProvider,
-} from "react-router-dom/server";
-import App from "./App";
-import createEmotionCache from "./createEmotionCache";
-import routes from "./routes";
+import createEmotionServer from '@emotion/server/create-instance';
+import type * as express from 'express';
+import { renderToString } from 'react-dom/server';
+import { createStaticHandler, createStaticRouter, StaticRouterProvider } from 'react-router-dom/server';
+import App from './App';
+import createEmotionCache from './createEmotionCache';
+import routes from './routes';
 
 const helmetContext = {};
 
 export function createFetchRequest(
   req: express.Request,
-  res: express.Response
+  res: express.Response,
 ): Request {
-  const origin = `${req.protocol}://${req.get("host")}`;
+  const origin = `${req.protocol}://${req.get('host')}`;
   const url = new URL(req.originalUrl || req.url, origin);
   const controller = new AbortController();
-  res.on("close", () => controller.abort());
+  res.on('close', () => controller.abort());
 
   const headers = new Headers();
 
@@ -41,7 +37,7 @@ export function createFetchRequest(
     signal: controller.signal,
   };
 
-  if (req.method !== "GET" && req.method !== "HEAD") {
+  if (req.method !== 'GET' && req.method !== 'HEAD') {
     init.body = req.body;
   }
 
@@ -71,7 +67,7 @@ export async function render({ req, res }: IRenderProps) {
   const html = renderToString(
     <App emotionCache={cache} helmetContext={helmetContext}>
       <StaticRouterProvider router={routerWithContext} context={context} />
-    </App>
+    </App>,
   );
   const emotionChunks = extractCriticalToChunks(html);
   const emotionCss = constructStyleTagsFromChunks(emotionChunks);

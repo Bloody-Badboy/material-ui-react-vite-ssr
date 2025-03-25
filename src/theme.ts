@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from "@mui/material";
+import { createTheme, responsiveFontSizes } from '@mui/material';
 
 export function pxToRem(value: number) {
   return `${value / 16}rem`;
@@ -8,23 +8,23 @@ export function pxToRem(value: number) {
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
-      mode: "dark",
+      mode: 'dark',
       primary: {
-        main: "#ffdc95",
+        main: '#ffdc95',
       },
       secondary: {
-        main: "#ffdc95",
+        main: '#ffdc95',
       },
       background: {
-        default: "#161616",
+        default: '#161616',
       },
       error: {
-        main: "#ff1744",
+        main: '#ff1744',
       },
     },
     typography: {
       fontSize: 12.5,
-      fontFamily: "'Rubik', sans-serif",
+      fontFamily: '\'Rubik\', sans-serif',
       fontWeightLight: 300,
       fontWeightRegular: 400,
       fontWeightMedium: 600,
@@ -34,7 +34,7 @@ const theme = responsiveFontSizes(
       MuiCard: {
         styleOverrides: {
           root: {
-            background: "#2b2b2b",
+            background: '#2b2b2b',
             boxShadow: `0 15px 35px rgba(0, 0, 0, 0.5)`,
             borderRadius: 8,
             zIndex: 0,
@@ -51,13 +51,13 @@ const theme = responsiveFontSizes(
       MuiLink: {
         styleOverrides: {
           root: {
-            color: "inherit",
-            textDecorationColor: "transparent",
+            color: 'inherit',
+            textDecorationColor: 'transparent',
           },
         },
       },
     },
-  })
+  }),
 );
 
 export default theme;

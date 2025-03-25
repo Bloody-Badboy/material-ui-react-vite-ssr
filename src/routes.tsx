@@ -1,36 +1,32 @@
-import { type RouteObject } from "react-router-dom";
-import EmptyLayout from "./layouts/EmptyLayout";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Todos, { loader as todosLoader } from "./pages/Todos";
+import { type RouteObject } from 'react-router-dom';
+import EmptyLayout from './layouts/EmptyLayout';
+import About from './pages/About';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Todos, { loader as todosLoader } from './pages/Todos';
 
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: '/',
     element: <EmptyLayout />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/todos',
+        element: <Todos />,
+        loader: todosLoader,
       },
     ],
   },
   {
-    path: "/404",
-    element: <NotFound />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/todos",
-    element: <Todos />,
-    loader: todosLoader,
-  },
-  {
-    path: "/*",
+    path: '/*',
     element: <NotFound />,
   },
 ];
